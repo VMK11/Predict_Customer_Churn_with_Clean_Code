@@ -34,27 +34,26 @@ The project is organized as follows:
     - logs                                --> log generated during testing
     - models                              --> contains saved models in .pkl format
     - churn_library.py                    --> Main entry file containing all the functions
-    - churn_notebook.ipynb                --> jupyter notebook leveraging churn_library.py for step-by-step execution
     - churn_script_logging_and_testing.py --> testing script for churn_library.py
     - constant.py                         --> ontains constant informations such as columns to process
     - requirements_py3.X.txt              --> requirements for the execution
 
 All python files were designed following pep8 rules and ratied as follows by pylint:
 
-- churn_library.py = 8.28
+- churn_library.py = 5.29
 - constant.py      = 10
-- churn_script_logging_and_testing.py = 8.32
+- churn_script_logging_and_testing.py = 7.80/10
 
 
 ## Running Files
 How do you run your files? What should happen when you run your files?
 
-The following project were tested using python  3.8 and all listed packages inside the requirements_py3.8.txt.
+The following project were tested using python  3.6 and all listed packages inside the requirements.txt.
 
 To install required packages, run the following command:
 
 ```
-pip install -r requirements_py3.8.txt
+pip install -r requirements.txt
 ```
 
 ### How to run the project
@@ -68,7 +67,6 @@ python churn_library.py
 or
 <br>
 
-- churn_notebook.ipynb
 
 ### How to test the the functionnality
 
