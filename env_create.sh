@@ -17,6 +17,7 @@ PACKAGES=(
     "seaborn==0.11.2"
     "pylint==2.7.4"
     "autopep8==1.5.6"
+    "PyYAML"
 )
 
 # Create new environment

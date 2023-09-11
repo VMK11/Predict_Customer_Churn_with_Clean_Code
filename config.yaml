@@ -1,0 +1,6 @@
+paths:
+  data: "./data/"
+  results: "./results/"
+  models: "./models/"
+  eda: "./eda/"
+  logs: "./logs/"

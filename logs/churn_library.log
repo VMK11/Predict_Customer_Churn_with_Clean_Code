@@ -1,0 +1,37 @@
+root - INFO - Starting test for data import.
+root - INFO - Test Import
+root - INFO - Testing import_data functionnality: SUCCESS
+root - INFO - Completed test for data import.
+root - INFO - Starting test for Exploratory Data Analysis (EDA).
+root - INFO - Test EDA
+root - INFO - Testing perform_eda functionnality: SUCCESS
+root - INFO - Completed test for EDA.
+root - INFO - Starting test for encoding categorical variables.
+root - INFO - Test Encoder Helper
+root - INFO - Testing encode_categorical_variables functionnality: SUCCESS
+root - INFO - Completed test for encoding categorical variables.
+root - INFO - Starting test for feature engineering.
+root - INFO - Test Feature Engineering
+root - INFO - Testing perform_feature_engineering functionnality: SUCCESS
+root - INFO - Completed test for feature engineering.
+root - INFO - Starting test for model training.
+root - INFO - Test Train Models
+root - INFO - Testing train_models functionnality: SUCCESS
+root - INFO - Completed test for model training.
+root - INFO - Loading trained models.
+root - INFO - Loaded trained models successfully.
+root - INFO - Starting test for model prediction using Random Forest.
+root - INFO - Test Predict Models
+root - INFO - Testing predict_models functionnality: SUCCESS
+root - INFO - Test Predict Models
+root - INFO - Testing predict_models functionnality: SUCCESS
+root - INFO - Completed test for model prediction using Random Forest.
+root - INFO - Starting test for model prediction using Logistic Regression.
+root - INFO - Test Predict Models
+root - INFO - Testing predict_models functionnality: SUCCESS
+root - INFO - Test Predict Models
+root - INFO - Testing predict_models functionnality: SUCCESS
+root - INFO - Completed test for model prediction using Logistic Regression.
+root - INFO - Starting test for model evaluation.
+root - INFO - Test Evaluate Models
+root - ERROR - Testing evaluate_models functionnality: one of the output data frame is empty
