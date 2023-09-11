@@ -1,30 +1,31 @@
 # Predict Customer Churn
 
-- Project **Predict Customer Churn** of ML DevOps Engineer Nanodegree Udacity
+- Project **Predict Customer Churn** is part of Udacity's ML DevOps Engineer Nanodegree Program
 
 ## Project Description
 
-The goal of this project is to turn a POC(Proof Of Concept) project into a Production Ready
-Project by leveraging all good practices from Udacity MLOPs Chapter 1 such as:
-- Code refactoring
-- Comments, DocString, etc
+This project aims to transform a Proof of Concept (POC) into a production-ready application, implementing best practices covered in Udacity's MLOps Chapter 1. These practices include:
+- Code Refactoring
+- Commenting and DocString
 - Modularity
-- Testing
-- Logging
-- AutoPEP8 and Pylint
+- Testing Procedures
+- Log Management
+- Adherence to AutoPEP8 and Pylint standards
 
-The base project were provided by Udacity and it predicts, for bank customers, the customer churn.
+The initial project, provided by Udacity, predicts customer churn for bank clients.
 
-The project follows the below workflow:
-- EDA: Explore and Analyze the dataset
-- FEATURE-ENGINEERING: Adapt the dataset for training
-- TRAINING: Train ML Model. In our case, we train two classification models from sklearn library (A Random Forest and a Logistic Regression)
-- POST-TRAINING: To understand what influence our models, we using SHAP library to post analyze the features. It allows to identify the features with higher impact on predictions.
-- STORAGE: Save best models and associated metrics for tracking and reusage for other inferences.
+Workflow:
+The project progresses through the following stages:
 
-## Files and data description
+- EDA (Exploratory Data Analysis): Initial data exploration and analysis
+- Feature Engineering: Dataset transformation for model training
+- Model Training: Training of two sklearn classification models (Random Forest and Logistic Regression)
+- Post-Training Analysis: Utilization of the SHAP library to understand feature impact
+- Data Storage: Saving the best-performing models and related metrics
 
-The project is organized as follows:
+## Project Structure
+
+The project is organized into the following folders and files:
 - PROJECT_FOLDER
     - data
         - bank_data.csv                   --> csv dataset
@@ -36,16 +37,16 @@ The project is organized as follows:
     - churn_library.py                    --> Main entry file containing all the functions
     - churn_script_logging_and_testing.py --> testing script for churn_library.py
     - constant.py                         --> ontains constant informations such as columns to process
-    - requirements_py3.X.txt              --> requirements for the execution
+    - requirements.txt              --> requirements for the execution
 
-All python files were designed following pep8 rules and ratied as follows by pylint:
+All Python files comply with PEP8 standards and have the following Pylint ratings::
 
 - churn_library.py = 5.29
 - constant.py      = 10
 - churn_script_logging_and_testing.py = 7.80/10
 
 
-## Running Files
+## Execution Guide
 How do you run your files? What should happen when you run your files?
 
 The following project were tested using python  3.6 and all listed packages inside the requirements.txt.
@@ -58,21 +59,17 @@ pip install -r requirements.txt
 
 ### How to run the project
 
-The project can be run from two entry points:
-- churn_library.py using
+You can initiate the project using one of the two entry points:
+- Execute churn_library.py using
 ```
 python churn_library.py
 ```
-<br>
-or
-<br>
 
 
-### How to test the the functionnality
+### Functionality Testing
 
-For this project, each function can be tested using dedicated module.
-To run the tests:
+Each function in the project comes with a dedicated testing module. To run these tests, execute:
 ```
 python churn_script_logging_and_tests.py
 ```
-It will print function under tests and for more detailed logging please check logs/churn_library.log file.
+The console will display the functions being tested. For more detailed logs, refer to the logs/churn_library.log file.
