@@ -39,7 +39,7 @@ The project is organized into the following folders and files:
     - constant.py                         --> ontains constant informations such as columns to process
     - requirements.txt              --> requirements for the execution
 
-All Python files comply with PEP8 standards and have the following Pylint ratings::
+All Python files comply with PEP8 standards and have the following Pylint ratings:
 
 - churn_library.py = 5.29
 - constant.py      = 10
