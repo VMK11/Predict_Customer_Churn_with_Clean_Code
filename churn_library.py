@@ -235,8 +235,7 @@ def perform_feature_engineering(data_frame, response='Churn'):
     return train_test_split(X, y, test_size=0.3, random_state=42)
 
 
-def generate_classification_report(
-        model_name, y_train, y_test, y_train_preds, y_test_preds):
+def generate_classification_report(model_name, y_train, y_test, y_train_preds, y_test_preds):
     """
     Generates a classification report for a given model and saves it as a PNG image.
 
@@ -266,34 +265,37 @@ def generate_classification_report(
     None
         The function saves the classification report as a PNG image and does not return any value.
     """
+    def save_and_show_plot(file_path, show_flag):
+        plt.savefig(file_path)
+        if show_flag:
+            plt.show()
 
-    # Prepare the data for generating reports
     report_data = [
         (f'{model_name} Train', y_train, y_train_preds),
         (f'{model_name} Test', y_test, y_test_preds)
     ]
 
-    # Initialize the plot
-    plt.figure(figsize=(5, 5))
+    plt.figure(figsize=(10, 10))
+    
+    y_position = 1.0
 
-    # Generate and plot the classification report for training and testing data
     for title, y, y_preds in report_data:
-        plt.text(0.01, 1.25, title, {'fontsize': 10})
-        plt.text(
-            0.01, 0.05, str(
-                classification_report(
-                    y, y_preds)), {
-                'fontsize': 10})
+        plt.text(0.01, y_position, title, {'fontsize': 12})
+        y_position -= 0.1  # Move down for the title
+        
+        report_str = str(classification_report(y, y_preds))
+        num_lines = len(report_str.split('\n'))
 
-    # Hide the plot axes
+        for line in report_str.split('\n'):
+            plt.text(0.01, y_position, line, {'fontsize': 10})
+            y_position -= 0.1  # Move down for the next line
+
+        y_position -= 0.1  # Add extra space between training and testing reports
+
     plt.axis('off')
-
-    # Save and optionally show the plot
-    save_and_show_plot(
-        os.path.join(
-            "results",
-            f'Classification_report_{model_name}.png'),
-        show_flag=False)
+    
+    os.makedirs("results", exist_ok=True)  # Create the results directory if it does not exist
+    save_and_show_plot(os.path.join("results", f'Classification_report_{model_name}.png'), show_flag=False)
 
 
 def evaluate_models(lrc_model, rfc_model,
