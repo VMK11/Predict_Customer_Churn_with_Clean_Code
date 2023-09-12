@@ -1,5 +1,11 @@
 #!/bin/bash
 
+"""
+Description: Helper functions to assist with the customer churn classification
+Author: V.Manousakis-Kokorakis
+Date: 11-09-2023
+"""
+
 # Name of the environment
 ENV_NAME="predict_customer_churn_with_clean_code"
 

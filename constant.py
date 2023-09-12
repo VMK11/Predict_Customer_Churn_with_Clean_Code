@@ -1,24 +1,8 @@
-'''
-
-File Name: constant.py
-
-Author(s): Artem Plastinkin
-
-Brief Description: Constant for the project
-
------
-
-Created Date: Tuesday, August 29th 2023, 11:52:00 am
-
------
-
-Last Modified: Wed Aug 30 2023
-Modified By: Artem Plastinkin
-
------
-History : DD.MM.YYYY	Author				Description
-        : 2023-08-30	Artem Plastinkin	First Release
-'''
+"""
+Description: Define the constants and the categorical columns used in the project
+Author: V.Manousakis-Kokorakis
+Date: 11-09-2023
+"""
 
 
 CAT_COLUMNS = [
