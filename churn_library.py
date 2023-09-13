@@ -341,11 +341,13 @@ def evaluate_models(lrc_model, rfc_model,
         return any value.
     """
 
+    logging.info("Evaluating Model Performance")
     # Generate classification reports (placeholder function)
     classification_report_image(y_train, y_test,
                                 y_train_preds_lr, y_train_preds_rf,
                                 y_test_preds_lr, y_test_preds_rf)
 
+    logging.info("Generating ROC Curves")
     # Compute ROC curves for both models
     fpr_lr, tpr_lr, _ = roc_curve(y_test, y_test_preds_lr)
     roc_auc_lr = auc(fpr_lr, tpr_lr)
@@ -368,15 +370,18 @@ def evaluate_models(lrc_model, rfc_model,
     plt.savefig(os.path.join("./results", 'ROC_curves.png'))
     plt.close()
 
+    logging.info("Generating Feature Importance Plot")
     # Generate feature importance plot (placeholder function)
     feature_importance_plot(
         model=rfc_model,
         feature_data=x_train,
         output_path=f"./{CONFIG['paths']['results']}")
 
+    logging.info("Generating SHAP Summary Plot")
     # Generate and save SHAP Summary Plot
     explainer = shap.TreeExplainer(rfc_model)
     shap_values = explainer.shap_values(x_test)
+    plt.figure(figsize=(150, 10))
     shap.summary_plot(shap_values, x_test, plot_type="bar")
     plt.savefig(f"./{CONFIG['paths']['results']}/SHAP.png")
 
