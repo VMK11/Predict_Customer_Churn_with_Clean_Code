@@ -41,7 +41,7 @@ The project is organized into the following folders and files:
 
 All Python files comply with PEP8 standards and have the following Pylint ratings:
 
-- churn_library.py = 5.29
+- churn_library.py = 7.36
 - constant.py      = 10
 - churn_script_logging_and_testing.py = 7.80/10
 
