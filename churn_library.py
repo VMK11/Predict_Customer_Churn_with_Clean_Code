@@ -275,27 +275,30 @@ def generate_classification_report(model_name, y_train, y_test, y_train_preds, y
         (f'{model_name} Test', y_test, y_test_preds)
     ]
 
-    plt.figure(figsize=(10, 10))
-    
-    y_position = 1.0
+    total_lines = 0  # To keep track of total lines across all reports
 
     for title, y, y_preds in report_data:
-        plt.text(0.01, y_position, title, {'fontsize': 12})
-        y_position -= 0.1  # Move down for the title
-        
         report_str = str(classification_report(y, y_preds))
         num_lines = len(report_str.split('\n'))
+        total_lines += num_lines + 2  # Adding 2 for the title and an empty line
 
+    os.makedirs("results", exist_ok=True)  # Create the results directory if it does not exist
+
+    for title, y, y_preds in report_data:
+        plt.figure(figsize=(30, total_lines * 0.2))  # Adjust the figure size based on the total lines
+
+        y_position = 1.0
+        plt.text(0.01, y_position, title, {'fontsize': 12})
+        y_position -= 0.2  # Move down for the title
+
+        report_str = str(classification_report(y, y_preds))
         for line in report_str.split('\n'):
             plt.text(0.01, y_position, line, {'fontsize': 10})
-            y_position -= 0.1  # Move down for the next line
+            y_position -= 0.2  # Move down for the next line
 
-        y_position -= 0.1  # Add extra space between training and testing reports
-
-    plt.axis('off')
-    
-    os.makedirs("results", exist_ok=True)  # Create the results directory if it does not exist
-    save_and_show_plot(os.path.join("results", f'Classification_report_{model_name}.png'), show_flag=False)
+        plt.axis('off')
+        save_and_show_plot(os.path.join("results", f'Classification_report_{title.replace(" ", "_")}.png'), show_flag=False)
+        plt.close()  # Close the current plot to free resources
 
 
 def evaluate_models(lrc_model, rfc_model,
